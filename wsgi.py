@@ -8,6 +8,7 @@ import os
 
 # Internal imports
 from blueprints.google import google
+from blueprints.general import general
 from db import db
 from models.user import User
 
@@ -30,6 +31,7 @@ def create_app():
     application.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
 
     application.register_blueprint(google)
+    application.register_blueprint(general)
 
     application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 
