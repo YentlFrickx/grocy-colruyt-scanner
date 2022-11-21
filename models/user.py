@@ -10,15 +10,21 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(100))
     profile_pic = db.Column(db.String(100))
     grocy_api_key = db.Column(db.String(1000))
+    colruyt_email = db.Column(db.String(1000))
+    colruyt_password = db.Column(db.String(1000))
 
     def __init__(self,
                  id_,
                  name,
                  email,
                  profile_pic,
+                 colruyt_email='',
+                 colruyt_password='',
                  grocy_api_key=''):
         self.id = id_
         self.name = name
         self.email = email
         self.profile_pic = profile_pic
         self.grocy_api_key = grocy_api_key
+        self.colruyt_email = colruyt_email
+        self.colruyt_password = colruyt_password

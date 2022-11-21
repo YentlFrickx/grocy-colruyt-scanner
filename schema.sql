@@ -3,5 +3,7 @@ CREATE TABLE IF NOT EXISTS user (
     name TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL,
     profile_pic TEXT NOT NULL,
-    grocy_api_key TEXT
+    grocy_api_key TEXT,
+    colruyt_email TEXT,
+    colruyt_password TEXT
 );

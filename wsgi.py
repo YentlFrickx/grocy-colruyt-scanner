@@ -7,6 +7,7 @@ from flask_bootstrap import Bootstrap
 import os
 
 # Internal imports
+from blueprints.connect import connect
 from blueprints.google import google
 from blueprints.general import general
 from db import db
@@ -32,6 +33,7 @@ def create_app():
 
     application.register_blueprint(google)
     application.register_blueprint(general)
+    application.register_blueprint(connect)
 
     application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 
